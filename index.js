@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 // Decrypt the data 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://frontend-pearl-omega-58.vercel.app',
 }))
 // allow requests from 5173 port
 
@@ -35,6 +35,7 @@ const checkError = (err, req, res, next) => {
 
 app.post('/register', valid, (req, res) => {
     console.log(req.body)
+    res.send('Data received successfully')
 });
 
 app.use(checkError)
